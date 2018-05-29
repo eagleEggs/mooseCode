@@ -38,57 +38,57 @@ def convertMoose():
         for row in open(sourceFile):
             print(row)
             for letter in row:
-                if letter == "a":
+                if letter == "a" or letter== "A":
                     letter = ".-"
-                if letter == "b":
+                if letter == "b" or letter== "B":
                     letter = "-..."
-                if letter == "c":
+                if letter == "c" or letter== "C":
                     letter = "-.-."
-                if letter == "d":
+                if letter == "d" or letter== "D":
                     letter = "-.."
-                if letter == "e":
+                if letter == "e" or letter== "E":
                     letter = "."
-                if letter == "f":
+                if letter == "f" or letter== "F":
                     letter = "..-."
-                if letter == "g":
+                if letter == "g" or letter== "G":
                     letter = "--."
-                if letter == "h":
+                if letter == "h" or letter== "H":
                     letter = "...."
-                if letter == "i":
+                if letter == "i" or letter== "I":
                     letter = ".."
-                if letter == "j":
+                if letter == "j" or letter== "J":
                     letter = ".---"
-                if letter == "k":
+                if letter == "k" or letter== "K":
                     letter = "-.-"
-                if letter == "l":
+                if letter == "l" or letter== "L":
                     letter = ".-.."
-                if letter == "m":
+                if letter == "m" or letter== "M":
                     letter = "--"
-                if letter == "n":
+                if letter == "n" or letter== "N":
                     letter = "-."
-                if letter == "o":
+                if letter == "o" or letter== "O":
                     letter = "---"
-                if letter == "p":
+                if letter == "p" or letter== "P":
                     letter = ".--."
-                if letter == "q":
+                if letter == "q" or letter== "Q":
                     letter = "--.-"
-                if letter == "r":
+                if letter == "r" or letter== "R":
                     letter = ".-."
-                if letter == "s":
+                if letter == "s" or letter== "S":
                     letter = "..."
-                if letter == "t":
+                if letter == "t" or letter== "T":
                     letter = "-"
-                if letter == "u":
+                if letter == "u" or letter== "U":
                     letter = "..-"
-                if letter == "v":
+                if letter == "v" or letter== "V":
                     letter = "...-"
-                if letter == "w":
+                if letter == "w" or letter== "W":
                     letter = ".--"
-                if letter == "x":
+                if letter == "x" or letter== "X":
                     letter = "-..-"
-                if letter == "y":
+                if letter == "y" or letter== "Y":
                     letter = "-.--"
-                if letter == "z":
+                if letter == "z" or letter== "Z":
                     letter = "--.."
                 if letter == " ":
                     letter = " "
