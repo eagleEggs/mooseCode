@@ -14,7 +14,7 @@ For building this I used the following LED component:<br>
 
 ### Status
 
-Currently, it translates A-Z, and spaces.
+Currently, it translates a-z, and spaces (no uppercase).
 
 ### Contributions
 
