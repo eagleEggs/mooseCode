@@ -1,39 +1,42 @@
 import RPi.GPIO as GPIO
 import time
 import sys
+import asyncio
 
-sourceFile = ''
+sourceFile = ' '
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 GPIO.setup(27,GPIO.OUT)
 
-def LEDout(letter):
+async def LEDout(letter):
     for symbol in letter:
-        time.sleep(3)
         if symbol == ".":
             print(symbol)
             GPIO.output(27,GPIO.HIGH)
             time.sleep(1)
             GPIO.output(27,GPIO.LOW)
+            time.sleep(1)
         if symbol == "-":
             print(symbol)
             GPIO.output(27,GPIO.HIGH)
             time.sleep(3)
             GPIO.output(27,GPIO.LOW)
+            time.sleep(1)
         if symbol == " ":
             print(symbol)
             GPIO.output(27,GPIO.LOW)
             time.sleep(7)
-        
 
-def convertMoose():
 
+async def convertMoose():
+    
     try:
         sourceFile = sys.argv[1]
     except:
-        print("Issue with Argument")
+        print("Issue with Input File Argument Syntax")
         sys.exit()
+
     try:
         for row in open(sourceFile):
             print(row)
@@ -92,11 +95,20 @@ def convertMoose():
                     letter = "--.."
                 if letter == " ":
                     letter = " "
-                LEDout(letter)
+                
+                await LEDout(letter)
 
 
     finally:
+        init.close()
         sys.exit()
         
-        
-convertMoose()
+try:
+    init = asyncio.get_event_loop()
+    init.run_until_complete(convertMoose())
+
+finally:
+    init.close()
+
+
+
