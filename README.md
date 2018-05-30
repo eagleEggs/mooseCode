@@ -2,7 +2,7 @@
 
 ### What is it
 
-A tool that converts text files to morse code with LED's on the Raspberry PI GPIO pins.\
+A tool that converts text files to morse code with LED's on the Raspberry PI.
 
 ### Setup
 
@@ -14,7 +14,7 @@ For building this I used the following LED component:<br>
 
 ### Status
 
-Currently, it translates a-z, and spaces (no uppercase).
+Currently, it translates a-z, A-Z and spaces.
 
 ### Contributions
 
