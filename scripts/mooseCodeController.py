@@ -7,7 +7,7 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setwarnings(False)
 GPIO.setup(27,GPIO.OUT)
 
-juxt = {'a':".-",'b':"-...",'c':"-.-.",'d':"-..",'e':".",'f':"..-.",'g':"--.",'h':"....",'i':"..",'j':".---",'k':"-.-",'l':".-..",'m':"--",'n':"-.",'o':"---",'p':".--.",'q':"--.-",'r':".-.",'s':"...",'t':"-",'u':"..-",'v':"...-",'w':".--",'x':"-..-",'y':"-.--",'z':"--..",' ':" ",'A':".-",'B':"-...",'C':"-.-.",'D':"-..",'E':".",'F':"..-.",'G':"--.",'H':"....",'I':"..",'J':".---",'K':"-.-",'L':".-..",'M':"--",'N':"-.",'O':"---",'P':".--.",'Q':"--.-",'R':".-.",'S':"...",'T':"-",'U':"..-",'V':"...-",'W':".--",'X':"-..-",'Y':"-.--",'Z':"--.."}
+juxt = {'a':".-",'b':"-...",'c':"-.-.",'d':"-..",'e':".",'f':"..-.",'g':"--.",'h':"....",'i':"..",'j':".---",'k':"-.-",'l':".-..",'m':"--",'n':"-.",'o':"---",'p':".--.",'q':"--.-",'r':".-.",'s':"...",'t':"-",'u':"..-",'v':"...-",'w':".--",'x':"-..-",'y':"-.--",'z':"--..",' ':" "}
 
 async def LEDout(letter):
     for symbol in letter:
@@ -33,7 +33,8 @@ async def convertMoose():
     try:
         sourceFile = sys.argv[1]
     except:
-        print("Issue with Argument")
+        print("Issue with Argument Specifying Input File")
+        print("Syntax: mooseCodeController.py textFile.txt")
         sys.exit()
 
     try:
@@ -41,10 +42,13 @@ async def convertMoose():
             print(row)
             for letter in row:
                 try:
-                    convert = juxt[letter]
+                    lowered = letter.lower()
+                    convert = juxt[lowered]
                     await LEDout(convert)
                 except:
-                    print("Unknown Entry")
+                    print("Character not in Dictionary")
+    except:
+        print("Issue Opening Input File")
 
 
     finally:
